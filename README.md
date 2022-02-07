@@ -83,6 +83,7 @@ The reserve.io-dashboard app has been carefully developed with the following tec
   - [React](https://pt-br.reactjs.org/) - A JavaScript library for creating user interfaces.
   - [TypeScript](https://www.typescriptlang.org/pt/) - JavaScript superset with syntax for types.
   - [React switch](https://www.npmjs.com/package/react-switch) - A draggable toggle-switch component for React.
+  - [React icons](https://react-icons.github.io/react-icons/) - Popular icons in React projects.
   - [Styled components](https://styled-components.com/) - React component styling.
   - [Yarn](https://yarnpkg.com/) - Package manager.
 
