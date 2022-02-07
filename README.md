@@ -10,9 +10,9 @@
 ![React](https://img.shields.io/badge/-React-21262d?fff&style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-21262d?fff&style=flat-square&logo=typescript)
 ![Styled-components](https://img.shields.io/badge/-Styled%20components-21262d?fff&style=flat-square&logo=styled-components)
+![Node.js](https://img.shields.io/badge/-Node.js-21262d?style=flat-square&logo=node.js&logoColor=509941)
 ![Yarn](https://img.shields.io/badge/-Yarn-21262d?fff&style=flat-square&logo=yarn)
 ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-21262d?fff&style=flat-square&logo=visual-studio-code&logoColor=007ACC)
-![Node.js](https://img.shields.io/badge/-Node.js-21262d?style=flat-square&logo=node.js&logoColor=509941)
 
 ## About
 
@@ -56,10 +56,10 @@ The files that are in the remote repository are now cloned into the local reposi
 
 ### Starting dashboard
 
-1. Install the required `client/` dependencies:
+1. Install the required `dashboard/` dependencies:
 
 ```bash
-cd client/
+cd dashboard/
 
 npm install
 # or
@@ -82,6 +82,7 @@ The reserve.io-dashboard app has been carefully developed with the following tec
 
   - [React](https://pt-br.reactjs.org/) - A JavaScript library for creating user interfaces.
   - [TypeScript](https://www.typescriptlang.org/pt/) - JavaScript superset with syntax for types.
+  - [React switch](https://www.npmjs.com/package/react-switch) - A draggable toggle-switch component for React.
   - [Styled components](https://styled-components.com/) - React component styling.
   - [Yarn](https://yarnpkg.com/) - Package manager.
 
