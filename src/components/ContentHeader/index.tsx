@@ -2,16 +2,19 @@ import React from "react";
 
 import { Container, TitleContainer, Title, Controllers } from "./styles";
 
-const ContentHeader: React.FC = () => {
+import { ContentHeaderProps } from "./types";
+
+const ContentHeader: React.FC<ContentHeaderProps> = ({
+  title,
+  lineColor,
+  children,
+}) => {
   return (
     <Container>
       <TitleContainer>
-        <Title>Dashboard</Title>
+        <Title lineColor={lineColor}>{title}</Title>
       </TitleContainer>
-      <Controllers>
-        <button type="button">2021</button>
-        <button type="button">2021</button>
-      </Controllers>
+      <Controllers>{children}</Controllers>
     </Container>
   );
 };
