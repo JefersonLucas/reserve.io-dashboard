@@ -5,4 +5,6 @@ export const Container = styled.div`
 
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.primary};
+
+  padding: 25px;
 `;
