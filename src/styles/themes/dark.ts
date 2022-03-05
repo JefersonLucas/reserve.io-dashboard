@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "dark",
 
@@ -16,7 +17,14 @@ export default {
     main: "#4E41F0",
     success: "#03BB85",
     info: "#2196F3",
-    warning: "#F7931B",
+    warning: "#FFB74D",
     danger: "#E44C4E",
+
+    // Shadows
+    shadows: {
+      light: "rgba(0, 0, 0, 0.2)",
+      medium: "rgba(0, 0, 0, 0.5)",
+      dark: "rgba(0, 0, 0, 0.8)",
+    },
   },
 };
