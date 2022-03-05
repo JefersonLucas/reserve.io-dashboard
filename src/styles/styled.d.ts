@@ -5,24 +5,50 @@ declare module "styled-components" {
     title: string;
 
     colors: {
-      primary: string;
-      secondary: string;
-      tertiary: string;
-
-      white: string;
-      black: string;
-      gray: string;
-
       main: string;
-      success: string;
-      info: string;
-      warning: string;
-      danger: string;
 
-      shadows: {
+      background: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+      };
+
+      text: {
+        white: string;
+        black: string;
+        gray: string;
+      };
+
+      status: {
+        success: string;
+        info: string;
+        warning: string;
+        danger: string;
+      };
+    };
+
+    shadows: {
+      colors: {
         light: string;
         medium: string;
         dark: string;
+      };
+
+      elevation: {
+        sm: string;
+        md: string;
+        lg: string;
+      };
+    };
+
+    animation: {
+      duration: {
+        instant: string;
+        faster: string;
+        fast: string;
+        normal: string;
+        slow: string;
+        slower: string;
       };
     };
   }

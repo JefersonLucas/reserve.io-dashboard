@@ -13,13 +13,13 @@ export const Container = styled.div`
 export const TitleContainer = styled.div``;
 
 export const Title = styled.h1<TitleProps>`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.text.white};
 
   &::after {
     content: "";
     display: block;
 
-    border-bottom: 10px solid ${(props) => props.lineColor};
+    border-bottom: 10px solid ${({ lineColor }) => lineColor};
 
     width: 55px;
   }

@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   grid-area: AS;
 
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.text.white};
+  background-color: ${({ theme }) => theme.colors.background.secondary};
 
   padding-left: 20px;
 
-  border-right: 1px solid ${({ theme }) => theme.colors.gray};
+  border-right: 1px solid ${({ theme }) => theme.colors.text.gray};
 `;
 
 export const Header = styled.header`
@@ -43,7 +43,7 @@ export const Link = styled.a`
   align-items: center;
   gap: 10px;
 
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.text.white};
 
   text-decoration: none;
   transition: 0.3s;

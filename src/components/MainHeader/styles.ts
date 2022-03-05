@@ -7,9 +7,9 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.secondary};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.text.white};
+  background-color: ${({ theme }) => theme.colors.background.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.text.gray};
 
   padding: 0 35px 0 25px;
 `;

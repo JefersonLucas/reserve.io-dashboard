@@ -10,8 +10,8 @@ export const Container = styled.div`
 export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
   ({ theme }) => ({
     onColor: theme.colors.main,
-    offColor: theme.colors.gray,
-    offHandleColor: theme.colors.primary,
+    offColor: theme.colors.text.gray,
+    offHandleColor: theme.colors.background.primary,
     activeBoxShadow: `0 0 2px 3px ${theme.colors.main}`,
     height: 28,
   }),
