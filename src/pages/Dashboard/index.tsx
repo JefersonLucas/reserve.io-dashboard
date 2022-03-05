@@ -1,8 +1,24 @@
 import React from "react";
-import { Container } from "components/Layout/styles";
+import { Container, Content } from "./styles";
+
+import ContentHeader from "components/ContentHeader";
+import SelectInput from "components/SelectInput";
+
+import { months, years } from "mock";
+
+import { useTheme } from "styled-components";
 
 const Dashboard: React.FC = () => {
-  return <Container>Dashboard</Container>;
+  const theme = useTheme();
+  return (
+    <Container>
+      <ContentHeader title="Dashboard" lineColor={theme.colors.main}>
+        <SelectInput options={months} />
+        <SelectInput options={years} />
+      </ContentHeader>
+      <Content />
+    </Container>
+  );
 };
 
 export default Dashboard;
