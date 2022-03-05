@@ -17,7 +17,7 @@ export const Button = styled.button<ButtonProps>`
   font-weight: 500;
 
   background: none;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.text.white};
 
   &::after {
     content: "";
@@ -28,19 +28,19 @@ export const Button = styled.button<ButtonProps>`
     border-bottom: 10px solid
       ${({ theme, status }) =>
         status === "waiting"
-          ? theme.colors.warning
+          ? theme.colors.status.warning
           : status === "using"
-          ? theme.colors.success
-          : theme.colors.danger};
+          ? theme.colors.status.success
+          : theme.colors.status.danger};
 
     box-shadow: ${({ active, theme, status }) =>
       active &&
-      `0 0 0.7em ${
+      `${theme.shadows.elevation.sm} ${
         status === "waiting"
-          ? theme.colors.warning
+          ? theme.colors.status.warning
           : status === "using"
-          ? theme.colors.success
-          : theme.colors.danger
+          ? theme.colors.status.success
+          : theme.colors.status.danger
       }`};
   }
 
@@ -48,9 +48,9 @@ export const Button = styled.button<ButtonProps>`
     box-shadow: 0 0 0.7em
       ${({ theme, status }) =>
         status === "waiting"
-          ? theme.colors.warning
+          ? theme.colors.status.warning
           : status === "using"
-          ? theme.colors.success
-          : theme.colors.danger};
+          ? theme.colors.status.success
+          : theme.colors.status.danger};
   }
 `;

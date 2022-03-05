@@ -6,9 +6,10 @@ export const Select = styled.select`
   cursor: pointer;
 
   border-radius: 5px;
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.tertiary};
-  box-shadow: 1px 1px 2px 2px ${({ theme }) => theme.colors.shadows.light};
+  color: ${({ theme }) => theme.colors.text.white};
+  background-color: ${({ theme }) => theme.colors.background.tertiary};
+  box-shadow: ${({ theme }) => theme.shadows.elevation.md}
+    ${({ theme }) => theme.shadows.colors.light};
 
   padding: 7px 10px;
 `;
