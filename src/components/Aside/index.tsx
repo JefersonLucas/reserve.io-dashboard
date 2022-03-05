@@ -1,21 +1,13 @@
 import React from "react";
 
-import {
-  Container,
-  Header,
-  LogoImage,
-  Title,
-  MenuContainer,
-  MenuItemLink,
-} from "./styles";
+import { Container, Header, Logo, Title, Menu, Link } from "./styles";
 
 import {
-  MdDashboard,
-  MdAccountBalanceWallet,
-  MdArrowUpward,
-  MdArrowDownward,
-  MdExitToApp,
-} from "react-icons/md";
+  AiFillDashboard as Dashboard,
+  AiFillFileAdd as FileAdd,
+  AiOutlineUnorderedList as UnorderedList,
+  AiOutlineLogout as Logout,
+} from "react-icons/ai";
 
 import logo from "assets/logo.svg";
 
@@ -23,35 +15,30 @@ const Aside: React.FC = () => {
   return (
     <Container>
       <Header>
-        <LogoImage src={logo} alt="Logo Reserve" />
+        <Logo src={logo} alt="Logo Reserve" />
         <Title>Reserve.io</Title>
       </Header>
-      <MenuContainer>
-        <MenuItemLink href="#">
-          <MdDashboard />
+      <Menu>
+        <Link href="#">
+          <Dashboard />
           Dashboard
-        </MenuItemLink>
+        </Link>
 
-        <MenuItemLink href="#">
-          <MdAccountBalanceWallet />
-          Novo registro
-        </MenuItemLink>
+        <Link href="#">
+          <FileAdd />
+          Cadastrar
+        </Link>
 
-        <MenuItemLink href="#">
-          <MdArrowUpward />
-          Entradas
-        </MenuItemLink>
+        <Link href="#">
+          <UnorderedList />
+          Reservas
+        </Link>
 
-        <MenuItemLink href="#">
-          <MdArrowDownward />
-          Saidas
-        </MenuItemLink>
-
-        <MenuItemLink href="#">
-          <MdExitToApp />
+        <Link href="#">
+          <Logout />
           Sair
-        </MenuItemLink>
-      </MenuContainer>
+        </Link>
+      </Menu>
     </Container>
   );
 };

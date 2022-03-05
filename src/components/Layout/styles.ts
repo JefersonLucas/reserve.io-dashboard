@@ -16,4 +16,6 @@ export const Container = styled.div`
     "AS CT";
 
   height: 100vh;
+
+  user-select: none;
 `;

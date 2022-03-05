@@ -21,7 +21,7 @@ export const Header = styled.header`
   user-select: none;
 `;
 
-export const LogoImage = styled.img`
+export const Logo = styled.img`
   display: block;
 
   width: 50px;
@@ -30,18 +30,18 @@ export const LogoImage = styled.img`
 
 export const Title = styled.h3``;
 
-export const MenuContainer = styled.nav`
+export const Menu = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: 10px 0;
+  gap: 25px 0;
 
   margin-top: 50px;
 `;
 
-export const MenuItemLink = styled.a`
+export const Link = styled.a`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 
   color: ${({ theme }) => theme.colors.white};
 
