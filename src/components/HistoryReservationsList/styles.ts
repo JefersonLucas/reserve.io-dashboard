@@ -16,10 +16,12 @@ export const Container = styled.li`
 
   background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 5px;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    transform: translateX(10px);
+    transform: scale(1.01);
     color: ${({ theme }) => theme.colors.main};
+    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
   }
 `;
 
