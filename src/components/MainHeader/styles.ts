@@ -11,7 +11,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.secondary};
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
 
-  padding: 0 10px;
+  padding: 0 35px 0 25px;
 `;
 
 export const Profile = styled.div``;
