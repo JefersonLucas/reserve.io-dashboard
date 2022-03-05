@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ContainerProps, TagProps } from "./types";
+import { StatusProps } from "./types";
 
-export const Container = styled.li<ContainerProps>`
+export const Container = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,16 +14,16 @@ export const Container = styled.li<ContainerProps>`
   margin: 10px 0;
   padding: 10px 12px;
 
-  background-color: ${({ color }) => color};
+  background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 5px;
 
   &:hover {
-    opacity: 0.7;
     transform: translateX(10px);
+    color: ${({ theme }) => theme.colors.main};
   }
 `;
 
-export const Tag = styled.div<TagProps>`
+export const Tag = styled.div<StatusProps>`
   position: absolute;
   left: 0;
 
@@ -33,7 +33,12 @@ export const Tag = styled.div<TagProps>`
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 
-  background-color: ${({ color }) => color};
+  background-color: ${({ status, theme }) =>
+    status === "waiting"
+      ? theme.colors.warning
+      : status === "using"
+      ? theme.colors.success
+      : theme.colors.danger};
 `;
 
 export const Header = styled.div`
@@ -44,6 +49,10 @@ export const Header = styled.div`
   padding-left: 10px;
 `;
 
-export const Title = styled.span``;
+export const Title = styled.span`
+  font-weight: bold;
+`;
 export const Subtitle = styled.small``;
-export const Amount = styled.h3``;
+export const Place = styled.h3`
+  padding-right: 20px;
+`;
