@@ -21,20 +21,9 @@ const Reservations: React.FC = () => {
       <Filters controls={controls} />
 
       <Content>
-        {reservations.map(
-          ({ id, requester, date, status, place, entry_time, exit_time }) => (
-            <ReservationList
-              key={id}
-              id={id}
-              status={status}
-              requester={requester}
-              date={date}
-              place={place}
-              entry_time={entry_time}
-              exit_time={exit_time}
-            />
-          ),
-        )}
+        {reservations.map((items) => (
+          <ReservationList key={items.id} {...items} />
+        ))}
       </Content>
     </Container>
   );
