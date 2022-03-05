@@ -2,9 +2,10 @@ import { Container, Content } from "./styles";
 
 import ContentHeader from "components/ContentHeader";
 import SelectInput from "components/SelectInput";
-import HistoryReservationsList from "components/HistoryReservationsList";
+import ReservationList from "components/ReservationList";
+import Filters from "components/Filters";
 
-import { months, years, reservations } from "mock";
+import { months, years, reservations, controls } from "mock";
 
 import { useTheme } from "styled-components";
 
@@ -16,11 +17,15 @@ const Reservations: React.FC = () => {
         <SelectInput options={months} />
         <SelectInput options={years} />
       </ContentHeader>
+
+      <Filters controls={controls} />
+
       <Content>
         {reservations.map(
           ({ id, requester, date, status, place, entry_time, exit_time }) => (
-            <HistoryReservationsList
+            <ReservationList
               key={id}
+              id={id}
               status={status}
               requester={requester}
               date={date}

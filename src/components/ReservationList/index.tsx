@@ -2,9 +2,10 @@ import React from "react";
 
 import * as S from "./styles";
 
-import { HistoryReservationsListProps } from "./types";
+import { ReservationListProps } from "./types";
 
-const HistoryReservationsList: React.FC<HistoryReservationsListProps> = ({
+const ReservationList: React.FC<ReservationListProps> = ({
+  id,
   status,
   requester,
   date,
@@ -13,7 +14,7 @@ const HistoryReservationsList: React.FC<HistoryReservationsListProps> = ({
   exit_time,
 }) => {
   return (
-    <S.Container>
+    <S.Container id={id}>
       <S.Tag status={status} />
       <S.Header>
         <S.Title>{requester}</S.Title>
@@ -26,4 +27,4 @@ const HistoryReservationsList: React.FC<HistoryReservationsListProps> = ({
   );
 };
 
-export default HistoryReservationsList;
+export default ReservationList;

@@ -18,6 +18,12 @@ declare module "styled-components" {
       info: string;
       warning: string;
       danger: string;
+
+      shadows: {
+        light: string;
+        medium: string;
+        dark: string;
+      };
     };
   }
 }

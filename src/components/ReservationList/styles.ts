@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { StatusProps } from "./types";
+
+import { TagProps } from "./types";
 
 export const Container = styled.li`
   display: flex;
@@ -10,27 +11,36 @@ export const Container = styled.li`
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
+  overflow: hidden;
 
   margin: 10px 0;
   padding: 10px 12px;
 
   background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 5px;
-  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 2px ${({ theme }) => theme.colors.shadows.light};
 
   &:hover {
     transform: scale(1.01);
-    color: ${({ theme }) => theme.colors.main};
-    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 5px 5px ${({ theme }) => theme.colors.shadows.light};
+
+    i {
+      height: 100%;
+
+      border-top-right-radius: none;
+      border-bottom-right-radius: none;
+    }
   }
 `;
 
-export const Tag = styled.div<StatusProps>`
+export const Tag = styled.i<TagProps>`
   position: absolute;
-  left: 0;
+  left: -1px;
 
   width: 10px;
   height: 60%;
+
+  transition: 0.3s;
 
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
