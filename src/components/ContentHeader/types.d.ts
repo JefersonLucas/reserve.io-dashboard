@@ -3,7 +3,7 @@ import React from "react";
 export interface ContentHeaderProps {
   title: string;
   lineColor: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export interface TitleProps {
