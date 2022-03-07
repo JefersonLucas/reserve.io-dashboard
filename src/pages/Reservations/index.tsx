@@ -5,7 +5,7 @@ import SelectInput from "components/SelectInput";
 import ReservationList from "components/ReservationList";
 import Filters from "components/Filters";
 
-import { months, years, reservations, controls } from "mock";
+import { months, years, reservations, controls } from "mocks";
 
 import { useTheme } from "styled-components";
 

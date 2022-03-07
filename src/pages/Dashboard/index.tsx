@@ -4,7 +4,7 @@ import { Container, Content } from "./styles";
 import ContentHeader from "components/ContentHeader";
 import SelectInput from "components/SelectInput";
 
-import { months, years } from "mock";
+import { months, years } from "mocks";
 
 import { useTheme } from "styled-components";
 
