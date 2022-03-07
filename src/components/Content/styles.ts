@@ -20,6 +20,6 @@ export const Container = styled.div`
     border-radius: 10px;
   }
   ::-webkit-scrollbar-track {
-    background-color: ${({ theme }) => theme.colors.background.secondary};
+    background-color: ${({ theme }) => theme.colors.background.primary};
   }
 `;
