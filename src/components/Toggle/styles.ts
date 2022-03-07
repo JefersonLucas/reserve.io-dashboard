@@ -13,6 +13,8 @@ export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
     offColor: theme.colors.text.gray,
     offHandleColor: theme.colors.background.primary,
     activeBoxShadow: `0 0 2px 3px ${theme.colors.main}`,
+    uncheckedIcon: false,
+    checkedIcon: true,
     height: 28,
   }),
 )<ReactSwitchProps>`
