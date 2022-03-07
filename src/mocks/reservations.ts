@@ -1,25 +1,4 @@
-import { Controls } from "components/Filters/types";
 import { ReservationListProps } from "components/ReservationList/types";
-
-export const years = [
-  { value: 2021, label: 2021 },
-  { value: 2022, label: 2022 },
-];
-
-export const months = [
-  { value: 1, label: "Janeiro" },
-  { value: 2, label: "Fevereiro" },
-  { value: 3, label: "Março" },
-  { value: 4, label: "Abril" },
-  { value: 5, label: "Maio" },
-  { value: 6, label: "Junho" },
-  { value: 7, label: "Julho" },
-  { value: 8, label: "Agosto" },
-  { value: 9, label: "Setembro" },
-  { value: 10, label: "Outubro" },
-  { value: 11, label: "Novembro" },
-  { value: 12, label: "Dezembro" },
-];
 
 export const reservations: ReservationListProps[] = [
   {
@@ -201,23 +180,5 @@ export const reservations: ReservationListProps[] = [
     place: "C6",
     entry_time: "18:00",
     exit_time: "22:00",
-  },
-];
-
-export const controls: Controls[] = [
-  {
-    title: "Aguardando",
-    status: "waiting",
-    active: false,
-  },
-  {
-    title: "Utilizando",
-    status: "using",
-    active: false,
-  },
-  {
-    title: "Recolhido",
-    status: "collected",
-    active: false,
   },
 ];
