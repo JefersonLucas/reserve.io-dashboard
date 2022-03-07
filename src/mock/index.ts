@@ -208,16 +208,16 @@ export const controls: Controls[] = [
   {
     title: "Aguardando",
     status: "waiting",
-    active: true,
+    active: false,
   },
   {
     title: "Utilizando",
     status: "using",
-    active: true,
+    active: false,
   },
   {
     title: "Recolhido",
     status: "collected",
-    active: true,
+    active: false,
   },
 ];
