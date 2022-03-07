@@ -53,13 +53,13 @@ export const Link = styled.a<LinkProps>`
       : theme.colors.background.secondary};
 
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
 
   position: relative;
 
   &:hover {
     color: ${({ theme }) => theme.colors.main};
-    background: ${({ theme }) => theme.colors.background.primary};
+    background: ${({ theme }) => theme.colors.background.tertiary};
   }
 
   > svg {

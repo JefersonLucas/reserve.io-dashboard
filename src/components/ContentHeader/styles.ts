@@ -19,14 +19,17 @@ export const Title = styled.h1<TitleProps>`
     content: "";
     display: block;
 
-    border-bottom: 10px solid ${({ lineColor }) => lineColor};
+    background-color: ${({ lineColor }) => lineColor};
+    border-radius: 2px;
 
-    width: 55px;
+    height: 10px;
+    width: 60%;
   }
 `;
 
 export const Controllers = styled.div`
   display: flex;
-  gap: 5px;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
 `;

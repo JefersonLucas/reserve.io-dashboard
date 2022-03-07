@@ -9,7 +9,7 @@ export const Container = styled.li`
 
   list-style: none;
   cursor: pointer;
-  transition: all ${({ theme }) => theme.animation.duration.normal};
+  transition: color, transform ${({ theme }) => theme.animation.duration.normal};
   position: relative;
   overflow: hidden;
 
@@ -23,6 +23,7 @@ export const Container = styled.li`
 
   &:hover {
     transform: scale(1.01);
+    background-color: ${({ theme }) => theme.colors.background.tertiary};
     box-shadow: ${({ theme }) => theme.shadows.elevation.lg}
       ${({ theme }) => theme.shadows.colors.light};
 
