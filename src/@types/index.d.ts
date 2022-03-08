@@ -1,5 +1,11 @@
 export type Status = "waiting" | "using" | "collected";
 
+export interface AuthContextProps {
+  isLoggedIn: boolean;
+  signIn(email: string, password: string): void;
+  logout(): void;
+}
+
 export interface Theme {
   title: string;
   colors: Colors;
@@ -27,6 +33,8 @@ export type BackgroundColor = {
   primary: string;
   secondary: string;
   tertiary: string;
+  white: string;
+  black: string;
 };
 
 export type TextColor = {
