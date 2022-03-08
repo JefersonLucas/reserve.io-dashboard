@@ -6,9 +6,13 @@ export const Container = styled.input`
   padding: 12px 14px;
 
   border-radius: 4px;
+  transition: ${({ theme }) => theme.animation.duration.normal};
 
-  color: ${({ theme }) => theme.colors.text.black};
-  background-color: ${({ theme }) => theme.colors.text.white};
+  color: ${({ theme }) => theme.colors.background.black};
+  background-color: ${({ theme }) =>
+    theme.title === "dark"
+      ? theme.colors.background.white
+      : theme.colors.background.primary};
   border: 1px solid transparent;
 
   &:focus,

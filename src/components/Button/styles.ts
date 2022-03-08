@@ -17,6 +17,7 @@ export const Container = styled.button`
   color: ${({ theme }) => theme.colors.text.white};
   background-color: ${({ theme }) => theme.colors.main};
   border: 1px solid transparent;
+  transition: ${({ theme }) => theme.animation.duration.normal};
 
   &:focus,
   &:hover {
