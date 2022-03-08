@@ -11,7 +11,7 @@ const AppRoutes: React.FC = () => {
   return (
     <Layout>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} caseSensitive />
+        <Route path="/" element={<Dashboard />} caseSensitive />
         <Route path="/register" element={<Register />} caseSensitive />
         <Route path="/reservations" element={<Reservations />} caseSensitive />
         <Route path="*" element={<Error />} />

@@ -79,3 +79,46 @@ export const Link = styled.a<LinkProps>`
     background-color: ${({ theme }) => theme.colors.main};
   }
 `;
+
+export const Button = styled.a<LinkProps>`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 10px 10px 20px;
+
+  color: ${({ theme, active }) =>
+    active ? theme.colors.main : theme.colors.text.white};
+  background: ${({ theme, active }) =>
+    active
+      ? theme.colors.background.primary
+      : theme.colors.background.secondary};
+
+  text-decoration: none;
+  transition: color 0.3s;
+
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.main};
+    background: ${({ theme }) => theme.colors.background.tertiary};
+  }
+
+  > svg {
+    font-size: 25px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: ${({ active }) => (active ? `5px` : `0px`)};
+    height: ${({ active }) => (active ? `100%` : `0%`)};
+    margin: 5px auto;
+    position: absolute;
+    right: -5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: ${({ theme }) => theme.colors.main};
+  }
+`;

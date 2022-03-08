@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import { Container, Header, Logo, Title, Menu, Link } from "./styles";
+import { Container, Header, Logo, Title, Menu, Link, Button } from "./styles";
 
 import {
   AiFillDashboard as Dashboard,
@@ -13,17 +13,20 @@ import logo from "assets/logo.svg";
 
 import { useLocation } from "react-router-dom";
 
+import useAuthContext from "hooks/useAuthContext";
+
 import { MenusProps } from "./types";
 
 const Aside: React.FC = () => {
   const { pathname } = useLocation();
-
+  const { logout, isLoggedIn } = useAuthContext();
+  console.log(isLoggedIn);
   const menus: MenusProps[] = useMemo(() => {
-    return pathname === "/dashboard"
+    return pathname === "/"
       ? [
           {
             title: "Dashboard",
-            href: "/dashboard",
+            href: "/",
             active: true,
             icon: <Dashboard />,
           },
@@ -38,19 +41,13 @@ const Aside: React.FC = () => {
             href: "/reservations",
             active: false,
             icon: <UnorderedList />,
-          },
-          {
-            title: "Sair",
-            href: "/logout",
-            active: false,
-            icon: <Logout />,
           },
         ]
       : pathname === "/register"
       ? [
           {
             title: "Dashboard",
-            href: "/dashboard",
+            href: "/",
             active: false,
             icon: <Dashboard />,
           },
@@ -65,19 +62,13 @@ const Aside: React.FC = () => {
             href: "/reservations",
             active: false,
             icon: <UnorderedList />,
-          },
-          {
-            title: "Sair",
-            href: "/logout",
-            active: false,
-            icon: <Logout />,
           },
         ]
       : pathname === "/reservations"
       ? [
           {
             title: "Dashboard",
-            href: "/dashboard",
+            href: "/",
             active: false,
             icon: <Dashboard />,
           },
@@ -93,17 +84,11 @@ const Aside: React.FC = () => {
             active: true,
             icon: <UnorderedList />,
           },
-          {
-            title: "Sair",
-            href: "/logout",
-            active: false,
-            icon: <Logout />,
-          },
         ]
       : [
           {
             title: "Dashboard",
-            href: "/dashboard",
+            href: "/",
             active: false,
             icon: <Dashboard />,
           },
@@ -118,12 +103,6 @@ const Aside: React.FC = () => {
             href: "/reservations",
             active: false,
             icon: <UnorderedList />,
-          },
-          {
-            title: "Sair",
-            href: "/logout",
-            active: false,
-            icon: <Logout />,
           },
         ];
   }, [pathname]);
@@ -141,6 +120,10 @@ const Aside: React.FC = () => {
             {title}
           </Link>
         ))}
+        <Button onClick={logout} href="/">
+          <Logout />
+          Sair
+        </Button>
       </Menu>
     </Container>
   );
