@@ -1,11 +1,10 @@
 export type Status = "waiting" | "using" | "collected";
 
-export interface AuthContextProps {
-  isLoggedIn: boolean;
-  signIn(email: string, password: string): void;
-  logout(): void;
+export interface User {
+  id: string;
+  username: string;
+  email: string;
 }
-
 export interface Theme {
   title: string;
   colors: Colors;
