@@ -1,10 +1,11 @@
 import styled, { keyframes } from "styled-components";
+import { ButtonProps } from "./types";
 
 const motion = keyframes`
   50% {box-shadow: 0px 0px 3px 2px #BFBFBF}
 `;
 
-export const Container = styled.button`
+export const Container = styled.button<ButtonProps>`
   width: 100%;
 
   padding: 10px;
@@ -24,5 +25,10 @@ export const Container = styled.button`
     animation: ${motion} 3s infinite;
     border: 1px solid ${({ theme }) => theme.colors.main};
     box-shadow: 0 0 2px 1px ${({ theme }) => theme.colors.main};
+  }
+
+  &:disabled {
+    opacity: ${({ disabled }) => (disabled ? "0.5" : "0")};
+    cursor: ${({ disabled }) => (disabled ? "progress" : "pointer")};
   }
 `;
