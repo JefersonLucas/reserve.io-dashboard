@@ -5,6 +5,15 @@ export interface User {
   username: string;
   email: string;
 }
+export interface Reservation {
+  id: string;
+  requester: string;
+  status: Status;
+  place: string;
+  date: string;
+  entry_time: string;
+  exit_time: string;
+}
 export interface Theme {
   title: string;
   colors: Colors;
