@@ -5,11 +5,15 @@ import App from "./app.routes";
 import Auth from "./auth.routes";
 
 import useAuthContext from "hooks/useAuthContext";
+import useLocalStorage from "hooks/useLocalStorage";
 
 const Routes: React.FC = () => {
+  const token = useLocalStorage.get("token");
   const { isLogged } = useAuthContext();
 
-  return <BrowserRouter>{isLogged ? <App /> : <Auth />}</BrowserRouter>;
+  return (
+    <BrowserRouter>{isLogged || token ? <App /> : <Auth />}</BrowserRouter>
+  );
 };
 
 export default Routes;

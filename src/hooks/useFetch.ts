@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import axios, { AxiosRequestConfig } from "axios";
 
-function useFetch<T = unknown, O = unknown>(url: string, options?: O) {
+function useFetch<T = unknown>(url: string, options?: AxiosRequestConfig) {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -8,16 +9,19 @@ function useFetch<T = unknown, O = unknown>(url: string, options?: O) {
   useEffect(() => {
     setError(null);
 
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => setData(data))
+    axios
+      .get(url, options)
+      .then((response) => {
+        setData(response.data);
+      })
       .catch((erro) => {
         setError(erro);
       })
       .finally(() => {
         setLoading(false);
       });
-  }, [options, url]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return { data, error, loading };
 }

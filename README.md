@@ -84,6 +84,7 @@ The reserve.io-dashboard app has been carefully developed with the following tec
   - [TypeScript](https://www.typescriptlang.org/pt/) - JavaScript superset with syntax for types.
   - [Styled components](https://styled-components.com/) - React component styling.
   - [Yarn](https://yarnpkg.com/) - Package manager.
+  - [Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js.
   - [React switch](https://www.npmjs.com/package/react-switch) - A draggable toggle-switch component for React.
   - [React icons](https://react-icons.github.io/react-icons/) - Popular icons in React projects.
   - [React Router](https://reactrouter.com/) - Declarative routing for React apps at any scale.
