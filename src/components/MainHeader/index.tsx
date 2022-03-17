@@ -7,8 +7,11 @@ import Toggle from "components/Toggle";
 import emojis from "utils/emojis";
 
 import useThemeContext from "hooks/useThemeContext";
+import useAuthContext from "hooks/useAuthContext";
 
 const MainHeader: React.FC = () => {
+  const { data } = useAuthContext();
+
   const { toggleTheme, theme } = useThemeContext();
 
   const [isTheme, setIsTheme] = useState(() =>
@@ -30,7 +33,7 @@ const MainHeader: React.FC = () => {
       <Toggle checked={isTheme} onChange={handleChangeTheme} />
       <Profile>
         <Welcome>Olá, {emoji}</Welcome>
-        <UserName>Jeferson Lucas</UserName>
+        {data && <UserName>{data.username}</UserName>}
       </Profile>
     </Container>
   );
