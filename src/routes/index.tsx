@@ -7,9 +7,9 @@ import Auth from "./auth.routes";
 import useAuthContext from "hooks/useAuthContext";
 
 const Routes: React.FC = () => {
-  const { isLoggedIn } = useAuthContext();
+  const { isLogged } = useAuthContext();
 
-  return <BrowserRouter>{isLoggedIn ? <App /> : <Auth />}</BrowserRouter>;
+  return <BrowserRouter>{isLogged ? <App /> : <Auth />}</BrowserRouter>;
 };
 
 export default Routes;

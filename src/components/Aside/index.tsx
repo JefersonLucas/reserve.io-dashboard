@@ -19,8 +19,7 @@ import { MenusProps } from "./types";
 
 const Aside: React.FC = () => {
   const { pathname } = useLocation();
-  const { logout, isLoggedIn } = useAuthContext();
-  console.log(isLoggedIn);
+  const { logout } = useAuthContext();
   const menus: MenusProps[] = useMemo(() => {
     return pathname === "/"
       ? [
