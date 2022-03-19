@@ -35,6 +35,8 @@ export const Container = styled.div`
 
   width: 100%;
   height: 100vh;
+
+  background: ${({ theme }) => theme.colors.background.primary};
 `;
 
 export const Load = styled.div`
