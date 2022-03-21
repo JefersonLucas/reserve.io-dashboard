@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useTheme } from "styled-components";
 
-import { Container, Content, NotContent } from "./styles";
+import { Container, Content, NotContent, FiltersContainer } from "./styles";
 
 import ContentHeader from "components/ContentHeader";
 import SelectInput from "components/SelectInput";
@@ -11,7 +11,7 @@ import Head from "components/Head";
 import Loader from "components/Loader";
 import Error from "components/Error";
 
-import { months, years, controls } from "mocks";
+import { months, years } from "mocks";
 
 import { GET_RESERVATION } from "api";
 
@@ -47,6 +47,8 @@ const Reservations: React.FC = () => {
     setYearSelected,
     monthSeleted,
     setMonthSelected,
+    selectedStatus,
+    handleStatusClick,
   } = useReservationsFiltered(data);
 
   if (error) return <Error error={error as unknown as string} />;
@@ -68,10 +70,33 @@ const Reservations: React.FC = () => {
           />
         </ContentHeader>
 
-        {reservations && reservations.length > 0 ? (
-          <Content>
-            <Filters controls={controls} />
+        <FiltersContainer>
+          <Filters
+            title="Aguardando"
+            status="waiting"
+            active={selectedStatus.includes("waiting") ? true : false}
+            onClick={() => handleStatusClick("waiting")}
+          />
 
+          <Filters
+            title="Utilizando"
+            status="using"
+            active={selectedStatus.includes("using") ? true : false}
+            onClick={() => handleStatusClick("using")}
+          />
+
+          <Filters
+            title="Recolhido"
+            status="collected"
+            active={selectedStatus.includes("collected") ? true : false}
+            onClick={() => handleStatusClick("collected")}
+          />
+        </FiltersContainer>
+
+        {reservations &&
+        reservations.length > 0 &&
+        selectedStatus.length > 0 ? (
+          <Content>
             {reservations.map((items) => (
               <ReservationList {...items} key={items.id} />
             ))}

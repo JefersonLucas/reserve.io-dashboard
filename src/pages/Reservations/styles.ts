@@ -11,3 +11,13 @@ export const NotContent = styled.div`
   width: 100%;
   height: 200px;
 `;
+
+export const FiltersContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+
+  width: 100%;
+  margin: 30px 0;
+`;
