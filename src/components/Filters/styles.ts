@@ -2,16 +2,6 @@ import styled from "styled-components";
 
 import { ButtonProps } from "./types";
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-
-  width: 100%;
-  margin: 30px 0;
-`;
-
 export const Button = styled.button<ButtonProps>`
   font-size: 18px;
   font-weight: 500;

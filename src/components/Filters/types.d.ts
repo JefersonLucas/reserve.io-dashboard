@@ -6,11 +6,8 @@ export interface ButtonProps {
 }
 
 export interface FiltersProps {
-  controls: Controls[];
-}
-
-export type Controls = {
   title: string;
   status: Status;
   active?: boolean;
-};
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+}
