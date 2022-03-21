@@ -1,17 +1,13 @@
 import React from "react";
 
-import { Button, Container } from "./styles";
+import { Button } from "./styles";
 import { FiltersProps } from "./types";
 
-const Filters: React.FC<FiltersProps> = ({ controls }) => {
+const Filters: React.FC<FiltersProps> = (props) => {
   return (
-    <Container>
-      {controls.map(({ title, status, active }) => (
-        <Button type="button" status={status} active={active} key={title}>
-          {title}
-        </Button>
-      ))}
-    </Container>
+    <Button type="button" {...props}>
+      {props.title}
+    </Button>
   );
 };
 
