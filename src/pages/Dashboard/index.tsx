@@ -2,13 +2,14 @@
 import React from "react";
 import { useTheme } from "styled-components";
 
-import { Container, Content, NotContent } from "./styles";
+import { Container, Content } from "./styles";
 
 import ContentHeader from "components/ContentHeader";
 import SelectInput from "components/SelectInput";
 import Head from "components/Head";
 import Loader from "components/Loader";
 import Error from "components/Error";
+import Card from "components/Card";
 
 import { months, years } from "mocks";
 
@@ -70,22 +71,46 @@ const Dashboard: React.FC = () => {
           />
         </ContentHeader>
         <Content>
-          {reservations && reservations.length > 0 ? (
-            <Content>
-              {reservations.map((items) => (
-                <li key={items.id}>{items.requester}</li>
-              ))}
-            </Content>
-          ) : (
-            <NotContent>
-              <p>
-                Não há <strong>reservas</strong> no período de{" "}
-                <strong>
-                  {returnMonth(monthSeleted)} de {yearSeleted}
-                </strong>
-                .
-              </p>
-            </NotContent>
+          {reservations && (
+            <>
+              <Card
+                title="Aguardando"
+                amount={
+                  reservations.filter(({ status }) => status === "waiting")
+                    .length
+                }
+                cardColor="warning"
+                footerLabel={`Baseadas no mês de ${returnMonth(
+                  monthSeleted,
+                )} de ${yearSeleted}`}
+                icon="waiting"
+              />
+
+              <Card
+                title="Utilizando"
+                amount={
+                  reservations.filter(({ status }) => status === "using").length
+                }
+                cardColor="success"
+                footerLabel={`Baseadas no mês de ${returnMonth(
+                  monthSeleted,
+                )} de ${yearSeleted}`}
+                icon="using"
+              />
+
+              <Card
+                title="Recolhido"
+                amount={
+                  reservations.filter(({ status }) => status === "collected")
+                    .length
+                }
+                cardColor="danger"
+                footerLabel={`Baseadas no mês de ${returnMonth(
+                  monthSeleted,
+                )} de ${yearSeleted}`}
+                icon="collected"
+              />
+            </>
           )}
         </Content>
       </Container>
