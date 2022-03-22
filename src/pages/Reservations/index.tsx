@@ -13,7 +13,7 @@ import Error from "components/Error";
 
 import { months, years } from "mocks";
 
-import { GET_RESERVATION } from "api";
+import { GET_RESERVATIONS } from "api";
 
 import { Reservation } from "@types";
 
@@ -37,7 +37,7 @@ const Reservations: React.FC = () => {
     return null;
   }
 
-  const { url, options } = GET_RESERVATION(token);
+  const { url, options } = GET_RESERVATIONS(token);
 
   const { data, loading, error } = useFetch<Reservation[]>(url, options);
 

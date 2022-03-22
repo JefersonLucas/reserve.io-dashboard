@@ -51,7 +51,7 @@ export function GET_USERS(token: string) {
   };
 }
 
-export function GET_RESERVATION(token: string): FetchAPI {
+export function GET_RESERVATIONS(token: string): FetchAPI {
   return {
     url: `${APIBaseURL}/reservations/`,
     options: {
