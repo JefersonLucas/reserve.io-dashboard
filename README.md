@@ -88,6 +88,7 @@ The reserve.io-dashboard app has been carefully developed with the following tec
   - [React switch](https://www.npmjs.com/package/react-switch) - A draggable toggle-switch component for React.
   - [React icons](https://react-icons.github.io/react-icons/) - Popular icons in React projects.
   - [React Router](https://reactrouter.com/) - Declarative routing for React apps at any scale.
+  - [React CountUp](https://www.npmjs.com/package/react-countup) - A configurable React component wrapper around CountUp.js.
 
 ## Authors
 
