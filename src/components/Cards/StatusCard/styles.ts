@@ -8,11 +8,24 @@ export const Container = styled.div<ContainerProps>`
   margin: 15px 0;
   padding: 10px 20px;
 
-  background: ${({ theme, cardColor }) => theme.colors.status[cardColor]};
-  border-radius: 10px;
-
   position: relative;
   overflow: hidden;
+
+  border-radius: 10px;
+  background: ${({ theme, cardColor }) => theme.colors.status[cardColor]};
+  transition: all ${({ theme }) => theme.animation.duration.normal};
+  box-shadow: ${({ theme }) => theme.shadows.elevation.md}
+    ${({ theme }) => theme.shadows.colors.light};
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: ${({ theme }) => theme.shadows.elevation.lg}
+      ${({ theme }) => theme.shadows.colors.light};
+
+    img {
+      right: -20px;
+    }
+  }
 `;
 
 export const Image = styled.img`
@@ -20,9 +33,10 @@ export const Image = styled.img`
   opacity: 0.3;
 
   height: 90%;
+  transition: ${({ theme }) => theme.animation.duration.slower};
 
   top: 10px;
-  right: -20px;
+  right: -80px;
 `;
 
 export const Title = styled.span`
