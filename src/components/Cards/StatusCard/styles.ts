@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { ContainerProps } from "./types";
 
 export const Container = styled.div<ContainerProps>`
-  width: 32%;
+  width: 31%;
   height: 150px;
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 10px 20px;
 
   background: ${({ theme, cardColor }) => theme.colors.status[cardColor]};

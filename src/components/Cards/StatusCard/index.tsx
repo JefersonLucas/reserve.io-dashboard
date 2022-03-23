@@ -4,13 +4,13 @@ import CountUp from "react-countup";
 
 import { Container, Title, Amount, Label, Image } from "./styles";
 
-import { CardProps } from "./types";
+import { StatusCardProps } from "./types";
 
 import fileWaiting from "assets/file-waiting-icon.svg";
 import fileUsing from "assets/file-using-icon.svg";
 import fileCollected from "assets/file-collected-icon.svg";
 
-const Card: React.FC<CardProps> = ({
+const StatusCard: React.FC<StatusCardProps> = ({
   title,
   amount,
   cardColor,
@@ -42,4 +42,4 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-export default Card;
+export default StatusCard;
