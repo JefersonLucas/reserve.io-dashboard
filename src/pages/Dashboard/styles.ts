@@ -6,6 +6,7 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const NotContent = styled.div`
@@ -16,4 +17,13 @@ export const NotContent = styled.div`
 
   width: 100%;
   height: 200px;
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 `;
