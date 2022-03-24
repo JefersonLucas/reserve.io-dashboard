@@ -85,10 +85,11 @@ The reserve.io-dashboard app has been carefully developed with the following tec
   - [Styled components](https://styled-components.com/) - React component styling.
   - [Yarn](https://yarnpkg.com/) - Package manager.
   - [Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js.
-  - [React switch](https://www.npmjs.com/package/react-switch) - A draggable toggle-switch component for React.
-  - [React icons](https://react-icons.github.io/react-icons/) - Popular icons in React projects.
+  - [React Switch](https://www.npmjs.com/package/react-switch) - A draggable toggle-switch component for React.
+  - [React Icons](https://react-icons.github.io/react-icons/) - Popular icons in React projects.
   - [React Router](https://reactrouter.com/) - Declarative routing for React apps at any scale.
-  - [React CountUp](https://www.npmjs.com/package/react-countup) - A configurable React component wrapper around CountUp.js.
+  - [React CountUp](https://react-countup.vercel.app/) - A configurable React component wrapper around CountUp.js.
+  - [Recharts](https://recharts.org/en-US) - A composable charting library built on React components.
 
 ## Authors
 
