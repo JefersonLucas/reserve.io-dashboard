@@ -29,6 +29,7 @@ function useDashboardFiltered(data: Reservation[] | null) {
   }, [data, monthSeleted, yearSeleted]);
 
   return {
+    datas: data,
     reservations,
     monthSeleted,
     setMonthSelected,
