@@ -45,7 +45,7 @@ const Dashboard: React.FC = () => {
   const { data, loading, error } = useFetch<Reservation[]>(url, options);
 
   const {
-    // datas,
+    datas,
     reservations,
     yearSeleted,
     setYearSelected,
@@ -103,9 +103,32 @@ const Dashboard: React.FC = () => {
 
   const historyData = useMemo(() => {
     return listOfMonths.map((_, month) => {
-      let amountWaiting = 0;
-      let amountUsing = 0;
-      let amountCollected = 0;
+      let amountWaiting = datas
+        ? datas.filter(
+            ({ status, date }) =>
+              status === "waiting" &&
+              Number(date.substring(5, 7)) === month + 1 &&
+              date.substring(0, 4) === yearSeleted,
+          ).length
+        : 0;
+
+      let amountUsing = datas
+        ? datas.filter(
+            ({ status, date }) =>
+              status === "using" &&
+              Number(date.substring(5, 7)) === month + 1 &&
+              date.substring(0, 4) === yearSeleted,
+          ).length
+        : 0;
+
+      let amountCollected = datas
+        ? datas.filter(
+            ({ status, date }) =>
+              status === "collected" &&
+              Number(date.substring(5, 7)) === month + 1 &&
+              date.substring(0, 4) === yearSeleted,
+          ).length
+        : 0;
 
       return {
         month: listOfMonths[month].substr(0, 3),
@@ -114,25 +137,7 @@ const Dashboard: React.FC = () => {
         amountCollected,
       };
     });
-    // .filter((item) => {
-    //   const currentMonth = new Date().getMonth() + 1;
-    //   const currentYear = new Date().getFullYear();
-    //   return (
-    //     (yearSeleted === String(currentYear) &&
-    //       item.month <= String(currentMonth)) ||
-    //     yearSeleted < String(currentYear)
-    //   );
-    // });
-  }, []);
-
-  // if (datas) {
-  //   console.log(historyData.map(({ month }) => month));
-  //   console.log(
-  //     datas
-  //       .filter(({ status }) => status === "waiting")
-  //       .map(({ date }) => returnMonth(date.substring(5, 7)).substring(0, 3)),
-  //   );
-  // }
+  }, [datas, yearSeleted]);
 
   if (error) return <Error error={error as unknown as string} />;
   if (loading) return <Loader />;
