@@ -2,7 +2,7 @@ import { Status } from "@types";
 
 type StatusColor = "success" | "info" | "warning" | "danger";
 
-export interface CardProps {
+export interface StatusCardProps {
   title: string;
   amount: number;
   cardColor: StatusColor;
