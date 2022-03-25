@@ -11,7 +11,16 @@ import {
 
 import { useTheme } from "styled-components";
 
-import { Container, Title, LineContainer } from "./styles";
+import {
+  Container,
+  Header,
+  Title,
+  LegendContainer,
+  Legend,
+  Percent,
+  Status,
+  LineContainer,
+} from "./styles";
 
 import { LineCardProps } from "./types";
 
@@ -19,7 +28,23 @@ const LineCard: React.FC<LineCardProps> = ({ data }) => {
   const theme = useTheme();
   return (
     <Container>
-      <Title>Histórico de reservas</Title>
+      <Header>
+        <Title>Histórico de reservas</Title>
+        <LegendContainer>
+          <Legend>
+            <Percent color={theme.colors.status.warning} />
+            <Status>Aguardando</Status>
+          </Legend>
+          <Legend>
+            <Percent color={theme.colors.status.success} />
+            <Status>Utilizando</Status>
+          </Legend>
+          <Legend>
+            <Percent color={theme.colors.status.danger} />
+            <Status>Recolhido</Status>
+          </Legend>
+        </LegendContainer>
+      </Header>
       <LineContainer>
         <ResponsiveContainer>
           <LineChart data={data}>

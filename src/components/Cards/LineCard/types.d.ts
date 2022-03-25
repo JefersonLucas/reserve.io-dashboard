@@ -6,3 +6,7 @@ export interface LineCardProps {
     amountCollected: number;
   }[];
 }
+
+export interface PercentProps {
+  color: string;
+}
