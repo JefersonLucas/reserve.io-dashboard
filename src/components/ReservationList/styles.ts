@@ -61,7 +61,7 @@ export const Tag = styled.i<TagProps>`
       : theme.colors.status.danger};
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,10 +79,47 @@ export const Subtitle = styled.small`
   color: ${({ theme }) => theme.colors.text.gray};
 `;
 
-export const Place = styled.h3`
+export const Controls = styled.div`
+  display: flex;
+  gap: 10px;
+
   transition: ${({ theme }) => theme.animation.duration.normal};
 
   color: ${({ theme }) => theme.colors.text.gray};
 
   padding-right: 20px;
+`;
+
+export const Edit = styled.button`
+  background: transparent;
+  color: ${({ theme }) => theme.colors.text.gray};
+
+  svg {
+    width: 25px;
+    height: 25px;
+    transition: ${({ theme }) => theme.animation.duration.normal};
+  }
+
+  &:hover {
+    svg:first-child {
+      color: ${({ theme }) => theme.colors.status.info};
+    }
+  }
+`;
+
+export const Delete = styled.button`
+  background: transparent;
+  color: ${({ theme }) => theme.colors.text.gray};
+
+  svg {
+    width: 25px;
+    height: 25px;
+    transition: ${({ theme }) => theme.animation.duration.normal};
+  }
+
+  &:hover {
+    svg:first-child {
+      color: ${({ theme }) => theme.colors.status.danger};
+    }
+  }
 `;
