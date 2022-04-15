@@ -1,6 +1,7 @@
-import React from "react";
+import React, { SelectHTMLAttributes } from "react";
 
-export interface SelectInputProps {
+export interface SelectInputProps
+  extends SelectHTMLAttributes<HTMLSelectElement> {
   options: {
     value: string | number;
     label: string | number;
