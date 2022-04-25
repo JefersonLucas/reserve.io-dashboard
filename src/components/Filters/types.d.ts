@@ -5,7 +5,7 @@ export interface ButtonProps {
   active?: boolean;
 }
 
-export interface FiltersProps {
+export interface FilterByStatusProps {
   title: string;
   status: Status;
   active?: boolean;

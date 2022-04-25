@@ -1,14 +1,12 @@
 import React from "react";
 
 import { Button } from "./styles";
-import { FiltersProps } from "./types";
+import { FilterByStatusProps } from "./types";
 
-const Filters: React.FC<FiltersProps> = (props) => {
-  return (
-    <Button type="button" {...props}>
-      {props.title}
-    </Button>
-  );
-};
+const FilterByStatus: React.FC<FilterByStatusProps> = (props) => (
+  <Button type="button" {...props}>
+    {props.title}
+  </Button>
+);
 
-export default Filters;
+export default FilterByStatus;
