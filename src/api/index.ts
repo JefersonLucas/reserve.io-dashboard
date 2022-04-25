@@ -1,8 +1,8 @@
-import { FetchAPI } from "./types";
+import { FetchAPI, ReservationCreateBody, UserLoginBody } from "./types";
 
 export const APIBaseURL = process.env.REACT_APP_API_BASE_URL;
 
-export function POST_LOGIN(body: { email: string; password: string }) {
+export function POST_LOGIN(body: UserLoginBody) {
   return {
     url: `${APIBaseURL}/users/login`,
     options: {
@@ -23,6 +23,23 @@ export function POST_VALIDATE_TOKEN(token: string) {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+    },
+  };
+}
+
+export function POST_RESERVATION_REGISTER(
+  body: ReservationCreateBody,
+  token: string,
+) {
+  return {
+    url: `${APIBaseURL}/reservations/create`,
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
     },
   };
 }
