@@ -10,6 +10,10 @@ import formatDate from "helpers/formatDate";
 import * as S from "./styles";
 
 import { ReservationListProps } from "./types";
+import Button from "components/Button";
+import useLocalStorage from "hooks/useLocalStorage";
+import useAuthContext from "hooks/useAuthContext";
+import { DELETE_RESERVATION } from "api";
 
 const ReservationList: React.FC<ReservationListProps> = ({
   id,
@@ -20,10 +24,28 @@ const ReservationList: React.FC<ReservationListProps> = ({
   entry_time,
   exit_time,
 }) => {
+  const { logout } = useAuthContext();
+
   const { isModalOpen: isModalEditOpen, toggleModal: toggleModalEdit } =
     useModal();
   const { isModalOpen: isModalDeleteOpen, toggleModal: toggleModalDelete } =
     useModal();
+
+  const token = useLocalStorage.get("token");
+
+  async function handleDeleteReservation() {
+    if (!token) {
+      logout();
+      window.location.href = "/";
+      return null;
+    }
+
+    const { url, options } = DELETE_RESERVATION(id, token);
+
+    await fetch(url, options);
+    toggleModalDelete();
+    document.location.reload();
+  }
 
   return (
     <>
@@ -58,9 +80,23 @@ const ReservationList: React.FC<ReservationListProps> = ({
       <Modal
         isOpen={isModalDeleteOpen}
         onClose={toggleModalDelete}
-        title="Deletar Reserva?"
+        title="Excluir reserva"
       >
-        {place} - {id}
+        <S.ModalContent>
+          Deletar reserva de <strong>{requester}</strong>?
+        </S.ModalContent>
+        <S.ModalFooter>
+          <Button type="button" className="cancel" onClick={toggleModalDelete}>
+            Cancelar
+          </Button>
+          <Button
+            type="reset"
+            className="confirm"
+            onClick={handleDeleteReservation}
+          >
+            Confirmar
+          </Button>
+        </S.ModalFooter>
       </Modal>
     </>
   );
