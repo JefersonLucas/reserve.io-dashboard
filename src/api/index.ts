@@ -79,3 +79,15 @@ export function GET_RESERVATIONS(token: string): FetchAPI {
     },
   };
 }
+
+export function DELETE_RESERVATION(id: string, token: string) {
+  return {
+    url: `${APIBaseURL}/reservations/delete/${id}`,
+    options: {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+}
