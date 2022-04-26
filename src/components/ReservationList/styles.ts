@@ -123,3 +123,34 @@ export const Delete = styled.button`
     }
   }
 `;
+
+export const ModalContent = styled.div`
+  padding: 50px 0;
+`;
+
+export const ModalFooter = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: ". . cancel confirm";
+  gap: 5px;
+
+  .cancel {
+    grid-area: cancel;
+    background-color: ${({ theme }) => theme.colors.background.primary};
+    border-radius: 5px;
+    color: ${({ theme }) => theme.colors.status.danger};
+    border: 1px solid ${({ theme }) => theme.colors.status.danger};
+    transition: ${({ theme }) => theme.animation.duration.normal};
+
+    &:focus,
+    &:hover {
+      animation: none;
+      border: 1px solid ${({ theme }) => theme.colors.status.danger};
+      box-shadow: 0 0 2px 1px ${({ theme }) => theme.colors.status.danger};
+    }
+  }
+
+  .confirm {
+    grid-area: confirm;
+  }
+`;
