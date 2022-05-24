@@ -55,6 +55,7 @@ const RegisterReservationForm: React.FC = () => {
     );
 
     await fetch(url, options);
+    document.location.reload();
   }
 
   return (
@@ -174,9 +175,6 @@ const RegisterReservationForm: React.FC = () => {
         onChange={({ target }) => setObservation(target.value)}
       />
 
-      <Button type="reset" className="cancel">
-        Cancelar
-      </Button>
       <Button type="submit" className="confirm">
         Cadastrar
       </Button>
