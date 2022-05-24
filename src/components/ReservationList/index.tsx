@@ -14,6 +14,7 @@ import Button from "components/Button";
 import useLocalStorage from "hooks/useLocalStorage";
 import useAuthContext from "hooks/useAuthContext";
 import { DELETE_RESERVATION } from "api";
+import UpdateReservationForm from "components/Forms/UpdateReservationForm";
 
 const ReservationList: React.FC<ReservationListProps> = ({
   id,
@@ -74,7 +75,9 @@ const ReservationList: React.FC<ReservationListProps> = ({
         onClose={toggleModalEdit}
         title="Editar Reserva?"
       >
-        {place}
+        <S.ModalContent>
+          {id && <UpdateReservationForm id={id} />}
+        </S.ModalContent>
       </Modal>
 
       <Modal

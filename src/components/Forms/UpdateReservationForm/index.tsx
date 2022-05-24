@@ -13,11 +13,17 @@ import useLocalStorage from "hooks/useLocalStorage";
 
 import useAuthContext from "hooks/useAuthContext";
 
-import { POST_RESERVATION_REGISTER } from "api";
+import { UPDATE_RESERVATION_REGISTER } from "api";
 
 import { Form, Error } from "./styles";
 
-const RegisterReservationForm: React.FC = () => {
+interface UpdateReservationFormProps {
+  id: string;
+}
+
+const UpdateReservationForm: React.FC<UpdateReservationFormProps> = ({
+  id,
+}) => {
   const requester = useForm("none");
   const equipment = useForm("none");
   const date = useForm("none");
@@ -40,7 +46,7 @@ const RegisterReservationForm: React.FC = () => {
       return null;
     }
 
-    const { url, options } = POST_RESERVATION_REGISTER(
+    const { url, options } = UPDATE_RESERVATION_REGISTER(
       {
         requester: requester.value,
         equipment: equipment.value,
@@ -52,6 +58,7 @@ const RegisterReservationForm: React.FC = () => {
         observation: observation,
       },
       token,
+      id,
     );
 
     await fetch(url, options);
@@ -104,7 +111,7 @@ const RegisterReservationForm: React.FC = () => {
         placeholder="Data"
         required
         className="date"
-        min={minDate(7)}
+        min={minDate(30)}
         value={date.value}
         onChange={date.onChange}
         onBlur={date.onBlur}
@@ -182,4 +189,4 @@ const RegisterReservationForm: React.FC = () => {
   );
 };
 
-export default RegisterReservationForm;
+export default UpdateReservationForm;

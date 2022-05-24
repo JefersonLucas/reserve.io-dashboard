@@ -44,6 +44,24 @@ export function POST_RESERVATION_REGISTER(
   };
 }
 
+export function UPDATE_RESERVATION_REGISTER(
+  body: ReservationCreateBody,
+  token: string,
+  id: string,
+) {
+  return {
+    url: `${APIBaseURL}/reservations/update/${id}`,
+    options: {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
 export function GET_USER(id: string, token: string) {
   return {
     url: `${APIBaseURL}/users/${id}`,

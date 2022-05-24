@@ -8,6 +8,7 @@ export interface User {
 export interface Reservation {
   id: string;
   requester: string;
+  equipment: string;
   status: Status;
   place: string;
   date: string;
